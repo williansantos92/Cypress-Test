@@ -4,6 +4,6 @@ node {
       } 
 
       stage('node v') {
-            CMD "node -v"
+            bat "node -v"
       }
     }  
