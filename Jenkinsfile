@@ -11,7 +11,7 @@ node {
             checkout scm
         }
 
-        stage('list dir') {
-            bat "dir *.* /w /s"
+        stage('img docker') {
+           docker.build("imagemcypress")
         }
     }  
