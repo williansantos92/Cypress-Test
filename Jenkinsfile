@@ -12,7 +12,7 @@ node {
     }
 
     stage('caminho workspace') {
-        bat 'echo ${WORKSPACE}'
+        echo '${BUILD.env}'
     }
 
     stage('Remove imagem') {
