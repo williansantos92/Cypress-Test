@@ -12,6 +12,6 @@ node {
         }
 
         stage('img docker') {
-           bat "docker build -t cypresimg"
+           bat 'docker build -t cypresimg .'
         }
     }  
