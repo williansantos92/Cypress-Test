@@ -11,7 +11,16 @@ node {
             checkout scm
         }
 
-        stage('img docker') {
-           bat 'docker build -t cypresimg .'
+    stage('buildar imagem') {
+            bat "docker build -t cypresimg ."
         }
+
+        stage('regressao') {
+            bat "docker run -it cypresimg"
+        }
+
+        stage('Remove imagem') {
+            sh "docker rmi -f cypresimg"
+        }
+
     }  
