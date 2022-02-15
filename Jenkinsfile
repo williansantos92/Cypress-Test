@@ -12,7 +12,7 @@ node {
     }
 
     stage('caminho workspace') {
-        echo '${BUILD.env}'
+        echo BUILD.url
     }
 
     stage('Remove imagem') {
