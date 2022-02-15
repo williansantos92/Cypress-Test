@@ -8,7 +8,7 @@ node {
         }   
 
     stage('regressao') {
-        bat "docker run -v %cd%:/e2e/allure-results cypresimg --spec ./cypress/integration/1-getting-started/todo.spec.js"
+        bat "docker run -v %cd%/allure-results:/e2e/allure-results cypresimg --spec ./cypress/integration/1-getting-started/todo.spec.js"
     }
 
     stage('Remove imagem') {
