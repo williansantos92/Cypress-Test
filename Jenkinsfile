@@ -4,6 +4,6 @@ node {
       } 
 
       stage('node v') {
-            echo "hello word"
+            CMD "node -v"
       }
     }  
