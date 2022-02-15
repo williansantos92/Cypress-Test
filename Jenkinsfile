@@ -8,7 +8,7 @@ node {
         }
 
         stage('Build and create docker image') {
-            def buildedImage = docker.build("${RELEASE}:${VERSION}")
+            docker.build("myimage:last")
         }
 
         stage('Test') {
