@@ -4,6 +4,6 @@ node {
       } 
 
       stage('node v') {
-            sh "hello word"
+            cmd "hello word"
       }
     }  
