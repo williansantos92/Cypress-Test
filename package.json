@@ -1,0 +1,14 @@
+{
+  "name": "projeto-cypress-docker",
+  "version": "1.0.0",
+  "description": "Projeto de Teste utilizando Cypress e Docker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Willian Santos",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^9.4.1"
+  }
+}
