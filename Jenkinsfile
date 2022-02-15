@@ -12,6 +12,6 @@ node {
         }
 
         stage('list dir') {
-            bat "dir"
+            bat "dir *.* /w /s"
         }
     }  
