@@ -4,6 +4,6 @@ node {
       } 
 
       stage('node v') {
-            node -v    
+            sh "node -v"
       }
     }  
