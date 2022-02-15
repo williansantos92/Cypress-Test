@@ -16,7 +16,7 @@ node {
         }
 
         stage('regressao') {
-            bat "docker run cypresimg"
+            bat "docker run cypresimg --spec ./cypress/integration/1-getting-started/todo.spec.js"
         }
 
         stage('Remove imagem') {
