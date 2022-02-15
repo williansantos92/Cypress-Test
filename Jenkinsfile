@@ -8,7 +8,11 @@ node {
         }   
 
     stage('regressao') {
-        bat "docker run -v C:/Users/willian.santos/Desktop/teste/allure-results:/e2e/allure-results cypresimg --spec ./cypress/integration/1-getting-started/todo.spec.js"
+        bat "docker run -v ${WORKSPACE}/allure-results:/e2e/allure-results cypresimg --spec ./cypress/integration/1-getting-started/todo.spec.js"
+    }
+
+    stage('caminho workspace') {
+        bat 'echo ${WORKSPACE}'
     }
 
     stage('Remove imagem') {
