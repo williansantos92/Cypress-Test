@@ -12,6 +12,6 @@ node {
         }
 
         stage('img docker') {
-           docker.build("imagemcypress")
+           docker -v
         }
     }  
