@@ -12,6 +12,6 @@ node {
         }
 
         stage('img docker') {
-           bat "docker -v"
+           ls "docker -v"
         }
     }  
