@@ -20,7 +20,7 @@ node {
         }
 
         stage('Remove imagem') {
-            sh "docker rmi -f cypresimg"
+            bat "docker rmi -f cypresimg"
         }
 
     }  
