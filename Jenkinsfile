@@ -1,4 +1,6 @@
-node {         
+node {
+    stages{ 
+                
       stage('Clone repository') {
             checkout scm    
       } 
@@ -6,4 +8,5 @@ node {
       stage('node v') {
             bat "node -v"
       }
-    }  
+    }
+}  
