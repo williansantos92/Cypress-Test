@@ -16,11 +16,11 @@ node {
         }
 
         stage('regressao') {
-            bat "docker run -it cypresimg"
+            bat "winpty docker run -it cypresimg"
         }
 
         stage('Remove imagem') {
-            bat "winpty docker rmi -f cypresimg"
+            bat "docker rmi -f cypresimg"
         }
 
     }  
