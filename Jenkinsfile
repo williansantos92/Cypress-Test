@@ -22,6 +22,7 @@ node {
         }
     } catch (e){
         echo e.toString()
+        currentBuild.result = "FAILURE"
     }
     
     stage('Remove imagem') {
