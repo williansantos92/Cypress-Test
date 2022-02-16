@@ -41,8 +41,12 @@ node {
         discordSend description: "Testes finalizados com sucesso", title:"regressao", webhookURL: webhookURLDicord, thumbnail: imgStartDiscord, result: "SUCCESS", link: BUILD_URL
     }
 
-    else {
+    if ("${currentBuild.currentResult}" == 'FAILURE') {
         discordSend description: "Testes finalizados com erro", title:"regressao", webhookURL: webhookURLDicord, thumbnail: imgErroDiscord, result: "FAILURE", link: BUILD_URL
+    }
+
+    if ("${currentBuild.currentResult}" == 'ABORTED') {
+        discordSend description: "Testes finalizados manualmente", title:"regressao", webhookURL: webhookURLDicord, thumbnail: imgErroDiscord, result: "FAILURE", link: BUILD_URL
     }
 
       
