@@ -3,8 +3,13 @@ imgStartDiscord = "https://cdn.xxl.thumbs.canstockphoto.com.br/ok-desenhos_csp15
 imgErroDiscord = "https://cdn.pixabay.com/photo/2017/02/12/21/29/false-2061132_960_720.png"
 
 node {     
-    stage('Enviar notificacao para o discord') {
-        discordSend description: "Iniciando regressao", title:"regressao", webhookURL: webhookURLDicord, result: "SUCCESS", link: BUILD_URL
+
+    try{
+   
+    discordSend description: "Iniciando regressao", title:"regressao", webhookURL: webhookURLDicord, result: "SUCCESS", link: BUILD_URL
+    
+    stage('teste erro'){
+        sh 'erro'
     }
       stage('clonar repositorio') {
             checkout scm    
@@ -44,6 +49,9 @@ node {
     else  {
         discordSend description: "Testes finalizados com erro", title:"regressao", webhookURL: webhookURLDicord, link: BUILD_URL
     }
+} catch(FlowInterruptedException flowInterruptedException){
+    discordSend description: "Testes finalizados com erro", title:"regressao", webhookURL: webhookURLDicord, link: BUILD_URL
+} throw flowInterruptedException
 
 
  
