@@ -1,8 +1,9 @@
 webhookURLDicord = "https://discord.com/api/webhooks/831892627271843840/VCR8-bVIAHCc5j8u9hXugUfIFNxzoMBZ18-zUrwxM3wYUlGWCqe0DGTOee4bxXXdhPRF"
+imgStartDiscord = "https://cdn.xxl.thumbs.canstockphoto.com.br/ok-desenhos_csp15025439.jpg"
 
 node {     
-    stage('Enviar notificação para o discord') {
-        discordSend description: "Jenkins Pipeline Build", title:"teste job script", webhookURL: webhookURLDicord
+    stage('Enviar notificacao para o discord') {
+        discordSend description: "Iniciando regressao", title:"regressao", webhookURL: webhookURLDicord, thumbnail: imgStartDiscord, result:SUCCESS
     }
       stage('clonar repositorio') {
             checkout scm    
