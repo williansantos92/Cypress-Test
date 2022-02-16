@@ -16,11 +16,14 @@ node {
     stage('buildar imagem') {
             bat "docker build -t cypresimg ."
         }   
-
-    stage('regressao') {
-        bat "docker run -v ${WORKSPACE}/allure-results:/e2e/allure-results cypresimg --spec ./cypress/integration/1-getting-started/todo.spec.js --env allure=true"
+    try {
+        stage('regressao') {
+            bat "docker run -v ${WORKSPACE}/allure-results:/e2e/allure-results cypresimg --spec ./cypress/integration/1-getting-started/todo.spec.js --env allure=true"
+        }
+    } catch (e){
+        echo e.toString()
     }
-
+    
     stage('Remove imagem') {
         bat "docker rmi -f cypresimg"
     } 
