@@ -3,7 +3,7 @@ imgStartDiscord = "https://cdn.xxl.thumbs.canstockphoto.com.br/ok-desenhos_csp15
 
 node {     
     stage('Enviar notificacao para o discord') {
-        discordSend description: "Iniciando regressao", title:"regressao", webhookURL: webhookURLDicord, thumbnail: imgStartDiscord, result: currentBuild.currentResult
+        discordSend description: "Iniciando regressao", title:"regressao", webhookURL: webhookURLDicord, thumbnail: imgStartDiscord, result: currentBuild.currentResult, link: BUILD_URL
     }
       stage('clonar repositorio') {
             checkout scm    
@@ -33,10 +33,7 @@ node {
             }
         }   
 
-        stage('teste pos build'){
-            if (currentBuild === "success") {
-                echo "sucess"
-            }
+        
         }
 
-    }  
+      
