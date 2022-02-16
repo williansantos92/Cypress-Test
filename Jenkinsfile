@@ -3,6 +3,7 @@
 webhookURLDicord = "https://discord.com/api/webhooks/831892627271843840/VCR8-bVIAHCc5j8u9hXugUfIFNxzoMBZ18-zUrwxM3wYUlGWCqe0DGTOee4bxXXdhPRF"
 imgStartDiscord = "https://cdn.xxl.thumbs.canstockphoto.com.br/ok-desenhos_csp15025439.jpg"
 imgErroDiscord = "https://cdn.pixabay.com/photo/2017/02/12/21/29/false-2061132_960_720.png"
+buildOk = true
 
 node {    
 
@@ -22,7 +23,7 @@ node {
         }
     } catch (e){
         echo e.toString()
-        currentBuild.result = "FAILURE"
+        buildOk = false
     }
     
     stage('Remove imagem') {
@@ -42,7 +43,7 @@ node {
         }  
 
         stage('Dispara finalizacao no discord') 
-            if ("${currentBuild.currentResult}" == 'SUCCESS') {
+            if ("${currentBuild.currentResult}" == 'SUCCESS' && buildOk == true) {
                 discordSend description: "Testes finalizados com sucesso", title:"regressao", webhookURL: webhookURLDicord, thumbnail: imgStartDiscord, result: "SUCCESS", link: BUILD_URL
             } else  {
                 discordSend description: "Testes finalizados com erro", title:"regressao", webhookURL: webhookURLDicord, link: BUILD_URL
