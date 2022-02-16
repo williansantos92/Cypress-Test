@@ -51,5 +51,5 @@ node {
     }
 
 } catch (FlowInterruptedException flowInterruptedException) {
-    echo "error"
+    
 }
