@@ -51,7 +51,8 @@ node {
     }
 } catch(FlowInterruptedException flowInterruptedException){
     discordSend description: "Testes finalizados com erro", title:"regressao", webhookURL: webhookURLDicord, link: BUILD_URL
-} throw flowInterruptedException
+    throw flowInterruptedException
+}
 
 
  
