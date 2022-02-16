@@ -1,7 +1,7 @@
 node {         
-      /* stage('clonar repositorio') {
+      stage('clonar repositorio') {
             checkout scm    
-      }  */     
+      }      
 
     stage('buildar imagem') {
             bat "docker build -t cypresimg ."
