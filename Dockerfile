@@ -7,4 +7,5 @@ COPY ./package.json ./package.json
 COPY ./cypress.json ./cypress.json
 
 RUN npx cypress verify
+RUN npm install
 
