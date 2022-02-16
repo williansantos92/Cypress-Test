@@ -1,4 +1,4 @@
-webhookURLDicord = "https://discord.com/api/webhooks/831892627271843840/VCR8-bVIAHCc5j8u9hXugUfIFNxzoMBZ18-zUrwxM3wYUlGWCqe0DGTOee4bxXXdhPRF"
+webhookURLDicord = "https://discord.com/api/webhooks/943562620596797481/UT9RlnvV5r2JS1pKheevxN8ge1Prjukm4MJUA39zNr1VF0FnKczeBkYX5PMJQc7h9I17"
 imgStartDiscord = "https://cdn.xxl.thumbs.canstockphoto.com.br/ok-desenhos_csp15025439.jpg"
 imgErroDiscord = "https://cdn.pixabay.com/photo/2017/02/12/21/29/false-2061132_960_720.png"
 testsOk = true
