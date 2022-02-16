@@ -33,9 +33,9 @@ node {
             }
         }   
 
-        post('teste pos build'){
-            ALWAYS{
-            echo "teste pos build"
+        stage('teste pos build'){
+            if (currentBuild === "success") {
+                echo "sucess"
             }
         }
 
