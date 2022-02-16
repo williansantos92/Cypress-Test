@@ -57,6 +57,10 @@ describe('example to-do app 2', () => {
       .should('have.text', newItem)
   })
 
+  it('teste'), () => {
+    expect(1).to.equal(2)
+  }
+
   it('can check off an item as completed 2', () => {
     // In addition to using the `get` command to get an element by selector,
     // we can also use the `contains` command to get an element by its contents.
