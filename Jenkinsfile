@@ -2,6 +2,7 @@ webhookURLDicord = "https://discord.com/api/webhooks/831892627271843840/VCR8-bVI
 imgStartDiscord = "https://cdn.xxl.thumbs.canstockphoto.com.br/ok-desenhos_csp15025439.jpg"
 imgErroDiscord = "https://cdn.pixabay.com/photo/2017/02/12/21/29/false-2061132_960_720.png"
 
+try {
 node {     
     stage('Enviar notificacao para o discord') {
         discordSend description: "Iniciando regressao", title:"regressao", webhookURL: webhookURLDicord, result: "SUCCESS", link: BUILD_URL
@@ -49,4 +50,6 @@ node {
         discordSend description: "Testes finalizados manualmente", title:"regressao", webhookURL: webhookURLDicord, thumbnail: imgErroDiscord, result: "FAILURE", link: BUILD_URL
     }
 
-      
+} catch (FlowInterruptedException flowInterruptedException) {
+    echo "error"
+}
