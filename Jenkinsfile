@@ -50,6 +50,4 @@ node {
         discordSend description: "Testes finalizados manualmente", title:"regressao", webhookURL: webhookURLDicord, thumbnail: imgErroDiscord, result: "FAILURE", link: BUILD_URL
     }
 
-} catch (FlowInterruptedException flowInterruptedException) {
-    
-}
+} 
