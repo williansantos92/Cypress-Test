@@ -33,4 +33,8 @@ node {
             }
         }   
 
+        post('teste pos build'){
+            echo "teste pos build"
+        }
+
     }  
