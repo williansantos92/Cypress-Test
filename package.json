@@ -4,11 +4,16 @@
   "description": "Projeto de Teste utilizando Cypress e Docker",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "runtests": "npx cypress run --spec './cypress/integration/1-getting-started/todo.spec.js' --env allure=true"
   },
   "author": "Willian Santos",
   "license": "ISC",
   "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^2.26.4",
     "cypress": "^9.4.1"
+  },
+  "dependencies": {
+    "caniuse-lite": "^1.0.30001312"
   }
 }
