@@ -4,13 +4,10 @@ webhookURLDicord = "https://discord.com/api/webhooks/831892627271843840/VCR8-bVI
 imgStartDiscord = "https://cdn.xxl.thumbs.canstockphoto.com.br/ok-desenhos_csp15025439.jpg"
 imgErroDiscord = "https://cdn.pixabay.com/photo/2017/02/12/21/29/false-2061132_960_720.png"
 
-node {     
+node {    
 
-   
-    discordSend description: "Iniciando regressao", title:"regressao", webhookURL: webhookURLDicord, result: "SUCCESS", link: BUILD_URL
-    
-    stage('teste erro'){
-        sh 'erro'
+    stage('Start notificacao no discord'){
+        discordSend description: "Iniciando regressao", title:"regressao", webhookURL: webhookURLDicord, result: "SUCCESS", link: BUILD_URL
     }
       stage('clonar repositorio') {
             checkout scm    
@@ -38,18 +35,17 @@ node {
                 results: [[path: '/allure-results']]
                 ])
             }
-        }   
+        }  
 
-        
-        }
-
-    if ("${currentBuild.currentResult}" == 'SUCCESS') {
-        discordSend description: "Testes finalizados com sucesso", title:"regressao", webhookURL: webhookURLDicord, thumbnail: imgStartDiscord, result: "SUCCESS", link: BUILD_URL
+        stage('Dispara finalizacao no discord') 
+            if ("${currentBuild.currentResult}" == 'SUCCESS') {
+                discordSend description: "Testes finalizados com sucesso", title:"regressao", webhookURL: webhookURLDicord, thumbnail: imgStartDiscord, result: "SUCCESS", link: BUILD_URL
+            } else  {
+                discordSend description: "Testes finalizados com erro", title:"regressao", webhookURL: webhookURLDicord, link: BUILD_URL
+             }
     }
 
-    else  {
-        discordSend description: "Testes finalizados com erro", title:"regressao", webhookURL: webhookURLDicord, link: BUILD_URL
-    }
+   
 
 
 
