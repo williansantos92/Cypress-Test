@@ -1,4 +1,9 @@
-node {         
+webhookURLDicord = "https://discord.com/api/webhooks/831892627271843840/VCR8-bVIAHCc5j8u9hXugUfIFNxzoMBZ18-zUrwxM3wYUlGWCqe0DGTOee4bxXXdhPRF"
+
+node {     
+    stage('Enviar notificação para o discord') {
+        discordSend description: "Jenkins Pipeline Build", title:"teste job script", webhookURL: webhookURLDicord
+    }
       stage('clonar repositorio') {
             checkout scm    
       }      
