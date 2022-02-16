@@ -37,7 +37,7 @@ node {
         
         }
 
-    if (currentBuild.currentResult === 'SUCCESS') {
+    if ("${currentBuild.currentResult}" == 'SUCCESS') {
         discordSend description: "Testes finalizados com sucesso", title:"regressao", webhookURL: webhookURLDicord, thumbnail: imgStartDiscord, result: "SUCCESS", link: BUILD_URL
     }
 
