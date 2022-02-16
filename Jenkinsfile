@@ -34,7 +34,9 @@ node {
         }   
 
         post('teste pos build'){
+            ALWAYS{
             echo "teste pos build"
+            }
         }
 
     }  
