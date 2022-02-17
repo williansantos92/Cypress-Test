@@ -1,6 +1,7 @@
 # Cypress Project + Discord Notification integration
 
-Projeto com o objetivo de executar os Testes Automatizados via Cypress dentro de uma pipeline do Jenkins, e obter uma notificação no Discord informando o momento em que a regressão dos testes foi iniciada, e após a finalização da mesma, uma nova notificação informando se os testes foram finalizados com sucesso ou não.
+
+Projeto criado com o objetivo de executar os Testes Automatizados via Cypress dentro de uma pipeline do Jenkins, obtendo uma notificação no Discord, onde será informado o momento em que a regressão dos testes foi iniciada, e após a finalização da mesma, uma nova notificação informando se os testes foram finalizados com sucesso ou não.
 
 **Discord Notification:**
 ![discord](https://i.ibb.co/F7mJcRC/discord.jpg)
@@ -11,12 +12,14 @@ Projeto com o objetivo de executar os Testes Automatizados via Cypress dentro de
 **Allure Report**
 ![allure](https://i.ibb.co/85HJg3d/allure.png)
 
-
+## Requisitos
+* Clonar este projeto
+* Instalar o jenkins
+* Instalar o docker
+  
 ## Installations
 
-Clonar este projeto
-Instalar o jenkins
-Instalar o docker
+
 
 ```bash
 pip install foobar
