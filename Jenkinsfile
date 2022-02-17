@@ -9,6 +9,7 @@ node {
         discordSend description: "Iniciando regressao", title:"regressao", webhookURL: webhookURLDicord, result: "SUCCESS", link: BUILD_URL
     }
       stage('clonar repositorio') {
+            cleanWs()
             checkout scm    
       }      
 
@@ -48,12 +49,10 @@ node {
                 discordSend description: "Testes finalizados com erro", title:"regressao", webhookURL: webhookURLDicord, link: BUILD_URL
              }
 
-        }
-
-             cleanWs()
+        } 
          
            //bat  "RD/s/q allure-results"
-        
+
     }
 
    
