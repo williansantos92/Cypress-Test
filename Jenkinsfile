@@ -7,6 +7,7 @@ node {
 
     stage('Start notificacao no discord'){
         discordSend description: "Iniciando regressao", title:"regressao", webhookURL: webhookURLDicord, result: "SUCCESS", link: BUILD_URL
+        cleanWs(notFailBuild: true)
     }
       stage('clonar repositorio') {
             checkout scm    
@@ -47,9 +48,8 @@ node {
             } else  {
                 discordSend description: "Testes finalizados com erro", title:"regressao", webhookURL: webhookURLDicord, link: BUILD_URL
              }
-        } 
+        }   
          
-         cleanWs(notFailBuild: true)
            //bat  "RD/s/q allure-results"
     }
 
