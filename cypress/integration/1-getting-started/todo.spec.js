@@ -25,6 +25,7 @@ describe('example to-do app 2', () => {
     // Then, we use `should` to assert that there are two matched items,
     // which are the two default items.
     cy.get('.todo-list li').should('have.length', 2)
+    
 
     // We can go even further and check that the default todos each contain
     // the correct text. We use the `first` and `last` functions
@@ -138,6 +139,7 @@ describe('example to-do app 2', () => {
 
       // Finally, make sure that the clear button no longer exists.
       cy.contains('Clear completed').should('not.exist')      
+      
     })
   })
 })
