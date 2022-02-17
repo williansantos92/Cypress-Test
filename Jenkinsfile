@@ -48,10 +48,12 @@ node {
                 discordSend description: "Testes finalizados com erro", title:"regressao", webhookURL: webhookURLDicord, link: BUILD_URL
              }
 
+        }
+
              cleanWs()
          
            //bat  "RD/s/q allure-results"
-        }
+        
     }
 
    
