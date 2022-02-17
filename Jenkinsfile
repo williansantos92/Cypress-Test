@@ -48,7 +48,7 @@ node {
              }
 
          stage('Limpar allure results'){
-            bat  "RD/s/q ${WORKSPACE}/allure-results"
+            bat  "RD/s/q allure-results"
         }
     }
 
