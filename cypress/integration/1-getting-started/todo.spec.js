@@ -138,7 +138,8 @@ describe('example to-do app 2', () => {
         .should('not.have.text', 'Pay electric bill')
 
       // Finally, make sure that the clear button no longer exists.
-      cy.contains('Clear completed').should('not.exist')      
+      //cy.contains('Clear completed').should('not.exist')      
+      cy.contains('Clear completed').should('exist')      
     })
   })
 })

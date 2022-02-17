@@ -49,7 +49,7 @@ node {
              }
         } 
          
-         cleanWs(patterns: [pattern: 'allure-results/.json', type: 'EXCLUDE'])
+         cleanWs(notFailBuild: true)
            //bat  "RD/s/q allure-results"
     }
 
