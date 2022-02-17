@@ -15,6 +15,7 @@ node {
     stage('buildar imagem') {
             bat "docker build -t cypresimg ."
         }   
+
     try {
         stage('regressao') {
             bat "docker run -v ${WORKSPACE}/allure-results:/e2e/allure-results cypresimg --spec ./cypress/integration/1-getting-started/todo.spec.js --env allure=true"
@@ -40,15 +41,17 @@ node {
             }
         }  
 
-        stage('Dispara finalizacao no discord') 
+        stage('Dispara finalizacao no discord'){ 
             if ("${currentBuild.currentResult}" == 'SUCCESS' && testsOk == true) {
                 discordSend description: "Testes finalizados com sucesso", title:"regressao", webhookURL: webhookURLDicord, thumbnail: imgStartDiscord, result: "SUCCESS", link: BUILD_URL
             } else  {
                 discordSend description: "Testes finalizados com erro", title:"regressao", webhookURL: webhookURLDicord, link: BUILD_URL
              }
+
+             cleanWs()
          
-            bat  "RD/s/q allure-results"
-        
+           //bat  "RD/s/q allure-results"
+        }
     }
 
    
