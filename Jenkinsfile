@@ -49,7 +49,7 @@ node {
              }
         } 
          
-         cleanWs(deleteDirs: true)
+         cleanWs(deleteDirs: true, notFailBuild: true)
            //bat  "RD/s/q allure-results"
     }
 
