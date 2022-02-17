@@ -46,7 +46,13 @@ node {
             } else  {
                 discordSend description: "Testes finalizados com erro", title:"regressao", webhookURL: webhookURLDicord, link: BUILD_URL
              }
+
+        stage('Limpar allure results'){
+            bat  "RD/s/q ${WORKSPACE}/allure-results"
+        }
     }
+
+
 
    
 
