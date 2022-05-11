@@ -9,7 +9,9 @@ node {
         discordSend description: "Iniciando regressao", title:"regressao", webhookURL: webhookURLDicord, result: "SUCCESS", link: BUILD_URL
         cleanWs(notFailBuild: true)
     }
-         
+      stage('clonar repositorio') {
+            checkout scm    
+      }      
 
     stage('buildar imagem') {
             bat "docker build -t cypresimg ."
