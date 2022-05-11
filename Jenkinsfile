@@ -1,4 +1,4 @@
-webhookURLDicord = "https://discord.com/api/webhooks/974005901675606036/aQoqkgllEr1BcCk111m8queb17UY-H93U5tDp9uqGGEHmSUe0TiI7bGLSqVZlx_QsYEH"
+webhookURLDicord = "https://discord.com/api/webhooks/974009046346629130/401i4MMaL44gXh-H31j48qhP53NbmJVM9YNzltMsBF6P8a_wgvQVkynT2X_jl9yoBx2h"
 imgStartDiscord = "https://cdn.xxl.thumbs.canstockphoto.com.br/ok-desenhos_csp15025439.jpg"
 imgErroDiscord = "https://cdn.pixabay.com/photo/2017/02/12/21/29/false-2061132_960_720.png"
 testsOk = true
@@ -9,9 +9,7 @@ node {
         discordSend description: "Iniciando regressao", title:"regressao", webhookURL: webhookURLDicord, result: "SUCCESS", link: BUILD_URL
         cleanWs(notFailBuild: true)
     }
-      stage('clonar repositorio') {
-            checkout scm    
-      }      
+         
 
     stage('buildar imagem') {
             bat "docker build -t cypresimg ."
